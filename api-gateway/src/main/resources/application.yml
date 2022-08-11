@@ -1,0 +1,15 @@
+server:
+  port: 2000
+   
+spring:
+  application:
+    name: API-GATEWAY
+    
+  cloud:
+    gateway:
+      routes:
+      - id: USER-SERVICE
+        uri:
+          lb://USER-SERVICE
+        predicates:
+        - Path=/home/**
